@@ -12,9 +12,14 @@ block content
 
   .container-fluid
     .row
-     each animal in results
-      .col-sm-2
+     each animal, index in results
+      .col-sm-2(onclick=`buy(${index})`)
         h3 #{animal.name}
         p Habitat: #{animal.habitat}
         p Population: #{animal.population}
+  
+  script.
+    function buy(index) {
+      alert(`You purchased item ${index}`);
+    }
 
