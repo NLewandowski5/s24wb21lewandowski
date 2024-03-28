@@ -2,4 +2,19 @@ extends layout
 
 block content
   h1= title
-  
+
+  - 
+    let results = [
+      { name: 'Lion', habitat: 'Savanna', population: 2000 },
+      { name: 'Elephant', habitat: 'Forest', population: 5000 },
+      { name: 'Tiger', habitat: 'Jungle', population: 2500 }
+    ]
+
+  .container-fluid
+    .row
+     each animal in results
+      .col-sm-2
+        h3 #{animal.name}
+        p Habitat: #{animal.habitat}
+        p Population: #{animal.population}
+
